@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Урок {{ lesson_id }}{% endblock %}
+{% block content %}
+  <div class="p-6 bg-white rounded-lg shadow max-w-md mx-auto">
+    <h1 class="text-xl mb-4">Урок {{ lesson_id }}</h1>
+    <button id="mark-btn" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Отметить присутствие</button>
+    <p id="status" class="mt-3 text-sm text-gray-700"></p>
+    <video id="video" class="mt-4 w-full rounded hidden" autoplay muted playsinline></video>
+    <canvas id="canvas" class="hidden"></canvas>
+  </div>
+{% endblock %}
+{% block scripts %}
+<script src="/static/script.js"></script>
+{% endblock %}

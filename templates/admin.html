@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Админка{% endblock %}
+{% block content %}
+  <h1 class="text-2xl mb-4">Панель администратора</h1>
+  <table class="min-w-full bg-white">
+    <thead>
+      <tr>
+        <th class="px-4 py-2 text-left">Студент</th>
+        <th class="px-4 py-2 text-left">Урок</th>
+        <th class="px-4 py-2 text-left">Сходство</th>
+        <th class="px-4 py-2 text-left">Время</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for r in records %}
+      <tr class="border-t">
+        <td class="px-4 py-2">{{ r.user.username }}</td>
+        <td class="px-4 py-2">{{ r.lesson_id }}</td>
+        <td class="px-4 py-2">{{ r.similarity }}</td>
+        <td class="px-4 py-2">{{ r.timestamp }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

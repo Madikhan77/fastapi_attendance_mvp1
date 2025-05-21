@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Выбор урока{% endblock %}
+{% block content %}
+  <h1 class="text-2xl mb-4">Выберите урок</h1>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {% for l in lessons %}
+    <div class="p-4 bg-white rounded-lg shadow">
+      <h2 class="text-lg font-medium">{{ l.title }}</h2>
+      <a href="/lesson/{{ l.id }}" class="mt-2 inline-block text-blue-600 hover:underline">Перейти</a>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %}
